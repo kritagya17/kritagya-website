@@ -267,6 +267,7 @@ body.cursor-hover .cursor-ring {
 /* ============================================================
    6. CUSTOM CURSOR (desktop only)
    ============================================================ */
+
 .cursor-dot, .cursor-ring {
   position: fixed;
   pointer-events: none;
@@ -292,7 +293,6 @@ body.cursor-hover .cursor-ring {
   width: 46px; height: 46px;
   border-color: var(--blue);
 }
-/* Hide on mobile & touch devices */
 @media (max-width: 768px),
        (hover: none) {
   .cursor-dot, .cursor-ring { display: none; }
