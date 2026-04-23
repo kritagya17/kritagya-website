@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kritagya Raj Pandey | Portfolio</title>
+    <title>Kritagya Raj Pandey | Personal Portfolio</title>
     <meta
       name="description"
-      content="Personal portfolio of Kritagya Raj Pandey, a third-year MBBS student from Nepal."
+      content="Portfolio website of Kritagya Raj Pandey, third-year MBBS student, content creator, and future medical educator."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,13 +17,17 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="site-shell"></div>
+    <header class="navbar">
+      <div class="container nav-inner">
+        <a href="#home" class="logo">KRP</a>
 
-    <header class="navbar" id="top">
-      <div class="container nav-content">
-        <a class="brand" href="#home">KRP</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
 
-        <nav class="nav-links">
+        <nav class="nav-links" id="navLinks">
           <a href="#about">About</a>
           <a href="#skills">Skills</a>
           <a href="#journey">Journey</a>
@@ -31,139 +35,134 @@
           <a href="#gallery">Gallery</a>
           <a href="#contact">Contact</a>
         </nav>
-
-        <a class="button button-small button-outline" href="#contact">Let's Connect</a>
       </div>
     </header>
 
     <main>
       <section class="hero" id="home">
         <div class="container hero-grid">
-          <div class="hero-copy reveal">
+          <div class="hero-content reveal">
             <p class="eyebrow">Personal Portfolio</p>
             <h1>Kritagya Raj Pandey</h1>
-            <p class="hero-tagline">
-              <span class="typing-prefix">I am a </span>
+            <p class="hero-subtitle">
+              <span>MBBS Student</span>
+              <span class="separator">|</span>
               <span class="typing-text" aria-live="polite"></span>
             </p>
             <p class="hero-description">
-              Third-year MBBS student from Nepal, building a meaningful journey in medicine,
-              education, and digital storytelling with ambition, discipline, and a student-first
-              mindset.
+              A third-year MBBS student from Nepal with a passion for medicine, academic excellence,
+              educational content, and building a strong personal brand that inspires students.
             </p>
 
             <div class="hero-actions">
-              <a class="button" href="#videos">View My Work</a>
-              <a
-                class="button button-secondary"
-                href="Kritagya-Raj-Pandey-CV.pdf"
-                download
-                id="resumeButton"
-              >
-                Download Resume
-              </a>
+              <a href="#videos" class="button primary">View My Work</a>
+              <a href="cv.pdf" class="button secondary" download>Download Resume</a>
             </div>
 
-            <div class="hero-stats">
-              <article class="stat-card">
-                <span class="stat-number">Rank 1</span>
-                <span class="stat-label">Common Entrance Examination 2080</span>
-              </article>
-              <article class="stat-card">
-                <span class="stat-number">3rd Year</span>
-                <span class="stat-label">MBBS Student</span>
-              </article>
-              <article class="stat-card">
-                <span class="stat-number">Nepal</span>
-                <span class="stat-label">Learning, creating, and growing</span>
-              </article>
+            <div class="hero-highlights">
+              <div class="highlight-card">
+                <strong>Rank 1</strong>
+                <span>Common Entrance Examination 2080</span>
+              </div>
+              <div class="highlight-card">
+                <strong>3rd Year</strong>
+                <span>MBBS Student</span>
+              </div>
+              <div class="highlight-card">
+                <strong>Nepal</strong>
+                <span>Ambitious and student-focused</span>
+              </div>
             </div>
           </div>
 
           <div class="hero-visual reveal">
-            <div class="portrait-card">
-              <div class="portrait-glow"></div>
-              <div class="portrait-frame">
-                <div class="portrait-placeholder" aria-label="Profile photo placeholder">
-                  <span class="portrait-initials">KRP</span>
-                  <span class="portrait-note">Replace with your photo</span>
-                </div>
+            <div class="profile-card">
+              <div class="profile-backdrop"></div>
+              <img
+                src="profile.jpg"
+                alt="Kritagya Raj Pandey"
+                class="profile-image"
+                id="profileImage"
+              />
+              <div class="image-fallback" id="imageFallback">
+                <div class="fallback-circle">KRP</div>
+                <p>Add `profile.jpg` to this folder</p>
               </div>
-              <div class="portrait-badge">
-                <span>MBBS Student</span>
-                <span>Content Creator</span>
+              <div class="profile-badge">
+                <strong>Future Medical Educator</strong>
+                <span>Medicine, content, and growth</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="section reveal" id="about">
+      <section class="section" id="about">
         <div class="container">
-          <div class="section-heading">
+          <div class="section-heading reveal">
             <p class="eyebrow">About Me</p>
-            <h2>Medicine, momentum, and meaningful impact.</h2>
+            <h2>Driven by excellence, grounded in purpose.</h2>
           </div>
 
           <div class="about-grid">
-            <article class="glass-card about-story">
+            <div class="panel reveal">
               <p>
-                I’m Kritagya Raj Pandey, a third-year MBBS student from Nepal who believes medical
-                education should feel inspiring, practical, and human. My journey has been shaped
-                by strong academic discipline, genuine curiosity, and the confidence to aim high.
+                I’m Kritagya Raj Pandey, a third-year MBBS student from Nepal. My path in medicine
+                has been shaped by discipline, curiosity, and the confidence to pursue meaningful
+                goals at a high level.
               </p>
               <p>
-                From securing Rank 1 in the Common Entrance Examination 2080 to continuing my MBBS
-                journey at Maharajgunj Medical Campus, I’m focused on becoming not just a capable
-                doctor, but also a creator who shares value with students through educational
-                content, videos, and personal storytelling.
+                I want this platform to reflect more than academics. It represents my journey as a
+                medical student, my interest in sharing educational content, and my long-term vision
+                of building a respected personal brand through thoughtful writing, videos, and
+                student-focused value.
               </p>
-            </article>
+            </div>
 
-            <article class="glass-card about-points">
-              <h3>What drives me</h3>
-              <ul>
-                <li>Turning my medical journey into motivation for other students.</li>
-                <li>Sharing educational content that feels clear, useful, and modern.</li>
-                <li>Building a personal brand rooted in ambition, confidence, and service.</li>
-                <li>Expanding into blog and video content in the future.</li>
+            <div class="panel reveal">
+              <h3>Highlights</h3>
+              <ul class="feature-list">
+                <li>Common Entrance Examination 2080 MBBS Rank 1</li>
+                <li>Ambitious, confident, and student-focused personality</li>
+                <li>Focused on medicine, content creation, and communication</li>
+                <li>Future-ready platform for blogs and video content</li>
               </ul>
-            </article>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="section reveal" id="skills">
+      <section class="section" id="skills">
         <div class="container">
-          <div class="section-heading">
+          <div class="section-heading reveal">
             <p class="eyebrow">Skills</p>
-            <h2>A balanced mix of academics, creativity, and communication.</h2>
+            <h2>Where academic rigor meets creative expression.</h2>
           </div>
 
-          <div class="cards-grid">
-            <article class="feature-card">
-              <div class="feature-icon">01</div>
+          <div class="card-grid">
+            <article class="card reveal">
+              <div class="card-number">01</div>
               <h3>Medical Knowledge</h3>
               <p>
-                Strong academic grounding in medicine with a disciplined and student-focused
-                approach to learning.
+                Built on disciplined study habits, academic consistency, and a growing clinical
+                foundation through MBBS training.
               </p>
             </article>
 
-            <article class="feature-card">
-              <div class="feature-icon">02</div>
+            <article class="card reveal">
+              <div class="card-number">02</div>
               <h3>Content Creation</h3>
               <p>
-                Passion for turning real academic experiences into engaging educational content for
-                students and aspiring medical learners.
+                Turning personal academic experiences into useful, inspiring, and student-friendly
+                educational content.
               </p>
             </article>
 
-            <article class="feature-card">
-              <div class="feature-icon">03</div>
+            <article class="card reveal">
+              <div class="card-number">03</div>
               <h3>Video Editing</h3>
               <p>
-                Ability to shape informative and aesthetic visual content that supports learning and
+                Creating polished visuals and engaging storytelling that support both education and
                 personal branding.
               </p>
             </article>
@@ -171,184 +170,144 @@
         </div>
       </section>
 
-      <section class="section reveal" id="journey">
+      <section class="section" id="journey">
         <div class="container">
-          <div class="section-heading">
+          <div class="section-heading reveal">
             <p class="eyebrow">Journey Timeline</p>
-            <h2>Milestones that shaped my path.</h2>
+            <h2>The path that brought me here.</h2>
           </div>
 
           <div class="timeline">
-            <article class="timeline-item">
-              <span class="timeline-dot"></span>
-              <div class="timeline-content glass-card">
-                <p class="timeline-stage">Foundation</p>
+            <div class="timeline-item reveal">
+              <div class="timeline-marker"></div>
+              <div class="timeline-card">
+                <span class="timeline-label">School</span>
                 <h3>Ideal Model School</h3>
-                <p>Completed SEE with an outstanding 4.0 GPA.</p>
-              </div>
-            </article>
-
-            <article class="timeline-item">
-              <span class="timeline-dot"></span>
-              <div class="timeline-content glass-card">
-                <p class="timeline-stage">Science Stream</p>
-                <h3>St. Xavier’s College</h3>
-                <p>Completed +2 Science and earned a 3.96 GPA in NEB.</p>
-              </div>
-            </article>
-
-            <article class="timeline-item">
-              <span class="timeline-dot"></span>
-              <div class="timeline-content glass-card">
-                <p class="timeline-stage">Breakthrough</p>
-                <h3>Common Entrance Examination 2080</h3>
-                <p>Secured MBBS Rank 1, marking a defining academic achievement.</p>
-              </div>
-            </article>
-
-            <article class="timeline-item">
-              <span class="timeline-dot"></span>
-              <div class="timeline-content glass-card">
-                <p class="timeline-stage">Present</p>
-                <h3>Maharajgunj Medical Campus, Institute of Medicine</h3>
-                <p>Currently pursuing MBBS while building an educational and creative presence.</p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section reveal" id="videos">
-        <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow">My Videos</p>
-            <h2>Educational storytelling with a personal edge.</h2>
-          </div>
-
-          <div class="cards-grid">
-            <article class="media-card">
-              <div class="media-thumb">
-                <span>Featured Video</span>
-              </div>
-              <h3>Study Journey & Motivation</h3>
-              <p>Share your preparation strategies, discipline, and mindset for success.</p>
-              <a
-                href="https://www.youtube.com/channel/UCU6NaCIzkGNAUoKZVh5WbOg"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Watch on YouTube
-              </a>
-            </article>
-
-            <article class="media-card">
-              <div class="media-thumb">
-                <span>Educational Content</span>
-              </div>
-              <h3>Medical Student Life</h3>
-              <p>Build videos around daily routines, insights, and practical MBBS experiences.</p>
-              <a
-                href="https://www.youtube.com/channel/UCU6NaCIzkGNAUoKZVh5WbOg"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Explore Channel
-              </a>
-            </article>
-
-            <article class="media-card">
-              <div class="media-thumb">
-                <span>Coming Next</span>
-              </div>
-              <h3>Future Blog + Video Series</h3>
-              <p>Designed to grow into a consistent personal brand and student resource hub.</p>
-              <a href="#contact">Collaborate With Me</a>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section reveal" id="gallery">
-        <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow">Photo Gallery</p>
-            <h2>Moments, milestones, and visual identity.</h2>
-          </div>
-
-          <div class="gallery-grid">
-            <article class="gallery-item">
-              <div class="gallery-overlay">
-                <h3>Campus Moments</h3>
-                <p>Add a real image here.</p>
-              </div>
-            </article>
-            <article class="gallery-item gallery-item-tall">
-              <div class="gallery-overlay">
-                <h3>Academic Journey</h3>
-                <p>Showcase your milestones visually.</p>
-              </div>
-            </article>
-            <article class="gallery-item">
-              <div class="gallery-overlay">
-                <h3>Creative Content</h3>
-                <p>Highlight your personal brand.</p>
-              </div>
-            </article>
-            <article class="gallery-item">
-              <div class="gallery-overlay">
-                <h3>Medical Lifestyle</h3>
-                <p>Use this space for authentic snapshots.</p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section reveal" id="contact">
-        <div class="container">
-          <div class="contact-layout">
-            <div class="contact-copy">
-              <p class="eyebrow">Contact</p>
-              <h2>Let’s connect and build something meaningful.</h2>
-              <p>
-                Whether you want to collaborate, learn more about my journey, or discuss educational
-                content, I’d love to hear from you.
-              </p>
-
-              <div class="contact-details glass-card">
-                <a href="tel:9748276147">9748276147</a>
-                <a href="mailto:krp2062@gmail.com">krp2062@gmail.com</a>
-                <span>Nepal</span>
+                <p>Completed SEE with an outstanding 4 GPA.</p>
               </div>
             </div>
 
-            <form class="contact-form glass-card" id="contactForm">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" placeholder="Your name" required />
+            <div class="timeline-item reveal">
+              <div class="timeline-marker"></div>
+              <div class="timeline-card">
+                <span class="timeline-label">+2 Science</span>
+                <h3>St. Xavier’s College</h3>
+                <p>Completed NEB with an impressive 3.96 GPA.</p>
+              </div>
+            </div>
 
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="your@email.com" required />
+            <div class="timeline-item reveal">
+              <div class="timeline-marker"></div>
+              <div class="timeline-card">
+                <span class="timeline-label">Entrance Achievement</span>
+                <h3>CEE 2080</h3>
+                <p>Secured MBBS Rank 1 in the Common Entrance Examination 2080.</p>
+              </div>
+            </div>
 
-              <label for="message">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                rows="5"
-                placeholder="Write your message here..."
-                required
-              ></textarea>
-
-              <button type="submit" class="button">Send Message</button>
-              <p class="form-message" id="formMessage"></p>
-            </form>
+            <div class="timeline-item reveal">
+              <div class="timeline-marker"></div>
+              <div class="timeline-card">
+                <span class="timeline-label">Present</span>
+                <h3>Maharajgunj Medical Campus, Institute of Medicine</h3>
+                <p>Currently pursuing MBBS while growing as a creator and communicator.</p>
+              </div>
+            </div>
           </div>
+        </div>
+      </section>
+
+      <section class="section" id="videos">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">My Videos</p>
+            <h2>Built for education, motivation, and personal storytelling.</h2>
+          </div>
+
+          <div class="card-grid">
+            <article class="media-card reveal">
+              <div class="media-preview">Study Motivation</div>
+              <h3>Preparation Journey</h3>
+              <p>Share your study process, discipline, insights, and lessons from your path.</p>
+              <a
+                href="https://www.youtube.com/channel/UCU6NaCIzkGNAUoKZVh5WbOg"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Visit YouTube Channel
+              </a>
+            </article>
+
+            <article class="media-card reveal">
+              <div class="media-preview">Medical Student Life</div>
+              <h3>Student-Focused Content</h3>
+              <p>Create videos around routines, medical school life, and practical guidance.</p>
+              <a
+                href="https://www.youtube.com/channel/UCU6NaCIzkGNAUoKZVh5WbOg"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Watch More
+              </a>
+            </article>
+
+            <article class="media-card reveal">
+              <div class="media-preview">Coming Soon</div>
+              <h3>Future Blog + Video Brand</h3>
+              <p>Designed to expand into a premium long-term platform for students and followers.</p>
+              <a href="#contact">Connect With Me</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="gallery">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Photo Gallery</p>
+            <h2>Visual moments from my journey.</h2>
+          </div>
+
+          <div class="gallery-grid">
+            <div class="gallery-item reveal"><span>Campus</span></div>
+            <div class="gallery-item tall reveal"><span>Achievement</span></div>
+            <div class="gallery-item reveal"><span>Study Life</span></div>
+            <div class="gallery-item reveal"><span>Content</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="container contact-grid">
+          <div class="contact-copy reveal">
+            <p class="eyebrow">Contact</p>
+            <h2>Let’s connect.</h2>
+            <p>
+              Reach out for collaborations, educational content ideas, or simply to connect with my
+              journey in medicine and creation.
+            </p>
+
+            <div class="contact-details">
+              <a href="tel:9748276147">9748276147</a>
+              <a href="mailto:krp2062@gmail.com">krp2062@gmail.com</a>
+              <span>Nepal</span>
+            </div>
+          </div>
+
+          <form class="contact-form reveal" id="contactForm">
+            <input type="text" name="name" placeholder="Your name" required />
+            <input type="email" name="email" placeholder="Your email" required />
+            <textarea name="message" rows="6" placeholder="Your message" required></textarea>
+            <button type="submit" class="button primary">Send Message</button>
+            <p id="formMessage" class="form-message"></p>
+          </form>
         </div>
       </section>
     </main>
 
     <footer class="footer">
-      <div class="container footer-content">
-        <p>© <span id="year"></span> Kritagya Raj Pandey. Built for a premium personal brand.</p>
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> Kritagya Raj Pandey. All rights reserved.</p>
         <div class="social-links">
           <a href="https://www.facebook.com/kritagyaraj.pandey.7" target="_blank" rel="noreferrer"
             >Facebook</a

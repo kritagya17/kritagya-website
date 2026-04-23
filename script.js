@@ -1,83 +1,97 @@
 const typingTarget = document.querySelector(".typing-text");
-const phrases = ["MBBS Student", "Content Creator", "Future Medical Educator"];
+const words = ["Content Creator", "Future Medical Educator", "Student Mentor"];
 
-let phraseIndex = 0;
-let letterIndex = 0;
-let isDeleting = false;
+let wordIndex = 0;
+let charIndex = 0;
+let deleting = false;
 
-function runTypingAnimation() {
-  if (!typingTarget) {
+function typeLoop() {
+  if (!typingTarget) return;
+
+  const currentWord = words[wordIndex];
+  typingTarget.textContent = currentWord.slice(0, charIndex);
+
+  if (!deleting && charIndex < currentWord.length) {
+    charIndex += 1;
+    setTimeout(typeLoop, 90);
     return;
   }
 
-  const currentPhrase = phrases[phraseIndex];
-  typingTarget.textContent = currentPhrase.slice(0, letterIndex);
-
-  if (!isDeleting && letterIndex < currentPhrase.length) {
-    letterIndex += 1;
-    setTimeout(runTypingAnimation, 90);
+  if (!deleting && charIndex === currentWord.length) {
+    deleting = true;
+    setTimeout(typeLoop, 1200);
     return;
   }
 
-  if (!isDeleting && letterIndex === currentPhrase.length) {
-    isDeleting = true;
-    setTimeout(runTypingAnimation, 1400);
+  if (deleting && charIndex > 0) {
+    charIndex -= 1;
+    setTimeout(typeLoop, 45);
     return;
   }
 
-  if (isDeleting && letterIndex > 0) {
-    letterIndex -= 1;
-    setTimeout(runTypingAnimation, 45);
-    return;
-  }
-
-  isDeleting = false;
-  phraseIndex = (phraseIndex + 1) % phrases.length;
-  setTimeout(runTypingAnimation, 220);
+  deleting = false;
+  wordIndex = (wordIndex + 1) % words.length;
+  setTimeout(typeLoop, 250);
 }
 
-// Reveal sections smoothly as they enter the viewport.
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("is-visible");
-      }
-    });
-  },
-  { threshold: 0.18 }
-);
+const revealItems = document.querySelectorAll(".reveal");
 
-document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
+if ("IntersectionObserver" in window) {
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
 
-// Provide simple feedback for the demo contact form.
+  revealItems.forEach((item) => revealObserver.observe(item));
+} else {
+  revealItems.forEach((item) => item.classList.add("in-view"));
+}
+
 const contactForm = document.getElementById("contactForm");
 const formMessage = document.getElementById("formMessage");
 
 if (contactForm && formMessage) {
   contactForm.addEventListener("submit", (event) => {
     event.preventDefault();
-    formMessage.textContent = "Thanks for reaching out. Your message is ready to be connected to a backend or email service.";
+    formMessage.textContent =
+      "Thanks for reaching out. This demo form is ready to be connected to email or a backend service.";
     contactForm.reset();
   });
 }
 
-// Warn the user if the resume file has not been added yet.
-const resumeButton = document.getElementById("resumeButton");
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
 
-if (resumeButton) {
-  resumeButton.addEventListener("click", (event) => {
-    const href = resumeButton.getAttribute("href");
-    if (!href || href === "#") {
-      event.preventDefault();
-      alert("Add your CV file in the project folder and update the resume link in index.html.");
-    }
+if (menuToggle && navLinks) {
+  menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("open");
+  });
+
+  navLinks.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => navLinks.classList.remove("open"));
   });
 }
 
-const yearTarget = document.getElementById("year");
-if (yearTarget) {
-  yearTarget.textContent = new Date().getFullYear();
+const year = document.getElementById("year");
+if (year) {
+  year.textContent = new Date().getFullYear();
 }
 
-runTypingAnimation();
+const profileImage = document.getElementById("profileImage");
+const imageFallback = document.getElementById("imageFallback");
+
+if (profileImage && imageFallback) {
+  profileImage.addEventListener("error", () => {
+    profileImage.style.display = "none";
+    imageFallback.style.display = "flex";
+  });
+}
+
+typeLoop();
